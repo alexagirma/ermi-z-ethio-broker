@@ -1,9 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import styled from 'styled-components'
 
-const Sidebar = () => {
+
+function Sidebar() {
 
     return(
+        
         <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div className="sb-sidenav-menu">
                         <div className="nav">
@@ -78,6 +81,7 @@ const Sidebar = () => {
                         Start Bootstrap
                     </div>
                 </nav>
+                
     )
 }
 

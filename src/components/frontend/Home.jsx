@@ -1,16 +1,40 @@
 import React from 'react';
+import Test from '../../layouts/frontend/Test';
+
+import Announcement from "../../layouts/frontend/Announcement"
+import Navbar from "../../layouts/frontend/Navbar"
+import Slider from "../../layouts/frontend/Slider"
+import Products from "../../layouts/frontend/Products"
+import Sidebar from '../../layouts/frontend/Sidebar';
+import styled from 'styled-components';
+
+
+
+const Container = styled.div`
+   display: flex;
+   width: 100%
+   background-color: #0999e6;
+
+`;
 
 function Home() {
     return (
-        <div>
-            <h1>Home</h1>
-            <p>
-                This is a home component.
-                <br />
-                It can be used to display a home theme in a home page.
-            </p>
-            </div>
+      <>
+        <Navbar/>
+        <Slider/>
+
+        <Container>
+          <Sidebar/>
+          <Test />
+        </Container>
+       
+        
+        </>
+       
     )
-}
+  }
+    
 
 export default Home;
+
+

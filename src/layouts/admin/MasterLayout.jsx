@@ -7,7 +7,7 @@ import Navbar from './Navbar';
 import Sidebar from './Sidebar'
 import Footer from './Footer'
 
-const MasterLayout = () => {
+function MasterLayout() {
 
     return(
         <div className='sb-nav-fixed'>
