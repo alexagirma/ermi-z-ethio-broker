@@ -67,9 +67,9 @@ export const popularProducts = [{
         amount: "From 2,000,000Birr",
         size: "1200 Sqft",
         bed: "2 Bed",
-        bedImage: "./propertyImage/double-bed.png",
+        bedImage: "https://cdn-icons-png.flaticon.com/512/6192/6192020.png",
         bath: "2 Bathroom",
-        bathImage: "./propertyImage/bath.png"
+        bathImage: "https://cdn-icons-png.flaticon.com/512/3305/3305893.png"
 
 
 
@@ -83,9 +83,9 @@ export const popularProducts = [{
         amount: "From 2,000,000Birr",
         size: "1200 Sqft",
         bed: "2 Bed",
-        bedImage: "./propertyImage/double-bed.png",
+        bedImage: "https://cdn-icons-png.flaticon.com/512/6192/6192020.png",
         bath: "2 Bathroom",
-        bathImage: "./propertyImage/bath.png"
+        bathImage: "https://cdn-icons-png.flaticon.com/512/3305/3305893.png"
 
 
 
@@ -99,24 +99,24 @@ export const popularProducts = [{
         amount: "From 2,000,000Birr",
         size: "1200 Sqft",
         bed: "2 Bed",
-        bedImage: "./propertyImage/double-bed.png",
+        bedImage: "https://cdn-icons-png.flaticon.com/512/6192/6192020.png",
         bath: "2 Bathroom",
-        bathImage: "./propertyImage/bath.png"
+        bathImage: "https://cdn-icons-png.flaticon.com/512/3305/3305893.png"
 
 
     },
     {
         id: 4,
-        img: "https://www.pngitem.com/pimgs/m/166-1668844_apartment-png-png-image-with-transparent-background-neumec.png",
+        img: "https://freepngimg.com/thumb/categories/3027.png",
         cat: "shoes",
         heading: "comfortable Appartment in palace",
         span: "Products",
         amount: "From 2,000,000Birr",
         size: "1200 Sqft",
         bed: "2 Bed",
-        bedImage: "./propertyImage/double-bed.png",
+        bedImage: "https://cdn-icons-png.flaticon.com/512/6192/6192020.png",
         bath: "2 Bathroom",
-        bathImage: "./propertyImage/bath.png"
+        bathImage: "https://cdn-icons-png.flaticon.com/512/3305/3305893.png"
 
 
     },
@@ -129,9 +129,9 @@ export const popularProducts = [{
         amount: "From 2,000,000Birr",
         size: "1200 Sqft",
         bed: "2 Bed",
-        bedImage: "./propertyImage/double-bed.png",
+        bedImage: "https://cdn-icons-png.flaticon.com/512/6192/6192020.png",
         bath: "2 Bathroom",
-        bathImage: "./propertyImage/bath.png"
+        bathImage: "https://cdn-icons-png.flaticon.com/512/3305/3305893.png"
 
 
     },
@@ -144,9 +144,9 @@ export const popularProducts = [{
         amount: "From 2,000,000Birr",
         size: "1200 Sqft",
         bed: "2 Bed",
-        bedImage: "./propertyImage/double-bed.png",
+        bedImage: "https://cdn-icons-png.flaticon.com/512/6192/6192020.png",
         bath: "2 Bathroom",
-        bathImage: "./propertyImage/bath.png"
+        bathImage: "https://cdn-icons-png.flaticon.com/512/3305/3305893.png"
 
 
 
@@ -160,71 +160,71 @@ export const popularProducts = [{
         amount: "From 2,000,000Birr",
         size: "1200 Sqft",
         bed: "2 Bed",
-        bedImage: "./propertyImage/double-bed.png",
+        bedImage: "https://cdn-icons-png.flaticon.com/512/6192/6192020.png",
         bath: "2 Bathroom",
-        bathImage: "./propertyImage/bath.png"
+        bathImage: "https://cdn-icons-png.flaticon.com/512/3305/3305893.png"
 
 
     },
     {
         id: 8,
-        img: "https://www.transparentpng.com/thumb/apartment/apartment-clipart-hd-14.png",
+        img: "https://www.pngplay.com/wp-content/uploads/13/Audi-Q5-Transparent-Free-PNG.png",
         cat: "tshirt",
         heading: "comfortable Appartment in palace",
         span: "Products",
         amount: "From 2,000,000Birr",
         size: "1200 Sqft",
         bed: "2 Bed",
-        bedImage: "./propertyImage/double-bed.png",
+        bedImage: "https://cdn-icons-png.flaticon.com/512/6192/6192020.png",
         bath: "2 Bathroom",
-        bathImage: "./propertyImage/bath.png"
+        bathImage: "https://cdn-icons-png.flaticon.com/512/3305/3305893.png"
 
 
     },
 
     {
         id: 9,
-        img: "https://www.transparentpng.com/thumb/apartment/apartment-clipart-hd-14.png",
+        img: "https://toppng.com/uploads/preview/apartment-png-11552950210j91rrvf793.png",
         cat: "tshirt",
         heading: "comfortable Appartment in palace",
         span: "Products",
         amount: "From 2,000,000Birr",
         size: "1200 Sqft",
         bed: "2 Bed",
-        bedImage: "./propertyImage/double-bed.png",
+        bedImage: "https://cdn-icons-png.flaticon.com/512/6192/6192020.png",
         bath: "2 Bathroom",
-        bathImage: "./propertyImage/bath.png"
+        bathImage: "https://cdn-icons-png.flaticon.com/512/3305/3305893.png"
 
 
     },
     {
         id: 10,
-        img: "https://www.transparentpng.com/thumb/apartment/apartment-clipart-hd-14.png",
+        img: "https://freepngimg.com/thumb/categories/3027.png",
         cat: "tshirt",
         heading: "comfortable Appartment in palace",
         span: "Products",
         amount: "From 2,000,000Birr",
         size: "1200 Sqft",
         bed: "2 Bed",
-        bedImage: "./propertyImage/double-bed.png",
+        bedImage: "https://cdn-icons-png.flaticon.com/512/6192/6192020.png",
         bath: "2 Bathroom",
-        bathImage: "./propertyImage/bath.png"
+        bathImage: "https://cdn-icons-png.flaticon.com/512/3305/3305893.png"
 
 
     },
 
     {
         id: 11,
-        img: "https://www.transparentpng.com/thumb/apartment/apartment-clipart-hd-14.png",
+        img: "https://w7.pngwing.com/pngs/779/521/png-transparent-apartment-real-estate-condominium-residencial-recanto-do-sol-building-apartment-building-condominium-apartment-thumbnail.png",
         cat: "tshirt",
         heading: "comfortable Appartment in palace",
         span: "Products",
         amount: "From 2,000,000Birr",
         size: "1200 Sqft",
         bed: "2 Bed",
-        bedImage: "./propertyImage/double-bed.png",
+        bedImage: "https://cdn-icons-png.flaticon.com/512/6192/6192020.png",
         bath: "2 Bathroom",
-        bathImage: "./propertyImage/bath.png"
+        bathImage: "https://cdn-icons-png.flaticon.com/512/3305/3305893.png"
 
 
     },
@@ -238,9 +238,9 @@ export const popularProducts = [{
         amount: "From 2,000,000Birr",
         size: "1200 Sqft",
         bed: "2 Bed",
-        bedImage: "./propertyImage/double-bed.png",
+        bedImage: "https://cdn-icons-png.flaticon.com/512/6192/6192020.png",
         bath: "2 Bathroom",
-        bathImage: "./propertyImage/bath.png"
+        bathImage: "https://cdn-icons-png.flaticon.com/512/3305/3305893.png"
 
 
 
@@ -255,9 +255,9 @@ export const popularProducts = [{
         amount: "From 2,000,000Birr",
         size: "1200 Sqft",
         bed: "2 Bed",
-        bedImage: "./propertyImage/double-bed.png",
+        bedImage: "https://cdn-icons-png.flaticon.com/512/6192/6192020.png",
         bath: "2 Bathroom",
-        bathImage: "./propertyImage/bath.png"
+        bathImage: "https://cdn-icons-png.flaticon.com/512/3305/3305893.png"
 
 
 
@@ -272,9 +272,9 @@ export const popularProducts = [{
         amount: "From 2,000,000Birr",
         size: "1200 Sqft",
         bed: "2 Bed",
-        bedImage: "./propertyImage/double-bed.png",
+        bedImage: "https://cdn-icons-png.flaticon.com/512/6192/6192020.png",
         bath: "2 Bathroom",
-        bathImage: "./propertyImage/bath.png"
+        bathImage: "https://cdn-icons-png.flaticon.com/512/3305/3305893.png"
 
 
 
@@ -289,9 +289,9 @@ export const popularProducts = [{
         amount: "From 2,000,000Birr",
         size: "1200 Sqft",
         bed: "2 Bed",
-        bedImage: "./propertyImage/double-bed.png",
+        bedImage: "https://cdn-icons-png.flaticon.com/512/6192/6192020.png",
         bath: "2 Bathroom",
-        bathImage: "./propertyImage/bath.png"
+        bathImage: "https://cdn-icons-png.flaticon.com/512/3305/3305893.png"
 
 
 

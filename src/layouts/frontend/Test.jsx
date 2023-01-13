@@ -24,7 +24,7 @@ function Test()     {
                          
                         <div className="property-thumb">
                              <div className="property-tag"> For Sale </div>
-                             <img src={detail.img} alt="Palace" />
+                             <img src={detail.img} alt="Palace"/>
                         </div>
                         <div className="property-content">
                             <h3>{detail.heading}</h3>
@@ -60,9 +60,9 @@ function Test()     {
                 
             </div>
 
-            <div className="More-property">
+         {/*  <div className="More-property">
                 <a className="property" href="#">More Properties</a>
-            </div>
+</div>*/}
         </section>
     </Fragment>
 

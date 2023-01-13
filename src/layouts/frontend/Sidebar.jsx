@@ -6,15 +6,19 @@ import InventoryIcon from '@mui/icons-material/Inventory';
 
 const Container = styled.div`
     margin-top: 12px;
-    margin-left: 8em;
+    margin-left: 4em;
     flex: 30%;
     height: calc(100vh - 50px);
 `;
 
 const Wrapper = styled.div`
 padding: 10px;
-background-color: #ddd7d7;
+background-color: white;
 padding-right: 50px;
+
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
 
 ul {
 padding:0;
