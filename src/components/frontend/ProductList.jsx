@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components"
-import Navbar from "../../layouts/frontend/Navbar"
-import Test from "../../layouts/frontend/Test"
+import Navbar from "../../layouts/frontend/navbar/Navbar"
+import Test from "../../layouts/frontend/product/Test"
 
 const Container = styled.div``;
 const Title = styled.h1`

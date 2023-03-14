@@ -15,8 +15,10 @@ import {
   Route,
   Link,
   Navigate,
-
+  useNavigate,
 } from "react-router-dom";
+import axios from 'axios';
+import swal from 'sweetalert';
 import Registration from './Registration';
 
 
@@ -49,11 +51,14 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
+    width: 300,
     bgcolor: 'background.paper',
-    //border: '2px solid #000',
-    boxShadow: 24,
+    border: '2px solid #000',
+    boxShadow: 50,
     p: 4,
+    //cursor: "pointer",
+    borderRadius: 3,
+    border: "none",
   };
 
 
@@ -72,18 +77,65 @@ function Login() {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    const navigate = useNavigate();
+
+
     const classes = useStyles();
     // create state variables for each input
     
-    const [email, setEmail] = useState('');
+  {/*}  const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
   
     const handleSubmit = e => {
       e.preventDefault();
       console.log(email, password);
       handleClose();
-    };
+    };*/}
+    const [loginInput, setLogin] = useState({
+      phone_number: '',
+      password: '',
+      error_list: [],
+    });
+
+    const handleInput = (e) => {
+      e.persist();
+      setLogin({...loginInput, [e.target.name]: e.target.value});
+       
+    }
+
+    const loginSubmit = (e) => {
+      e.preventDefault();
+
+      const data = {
+        phone_number: loginInput.phone_number,
+        password: loginInput.password,
+      }
+      axios.get('/sanctum/csrf-cookie').then(response => {
+      axios.post(`api/customer/login`, data).then(res =>{
+        if(res.data.status === 200)
+        {
+
+          localStorage.setItem('auth_token', res.data.token);
+          localStorage.setItem('auth_firstname', res.data.firstname);
+          localStorage.setItem('auth_lastname', res.data.lastname);
+          swal("Success", res.data.message, "success");
+          navigate('/');
+
+        }
+        else if(res.data.status === 401)
+        {
+          swal("warning", res.data.message, "warning");
+        }
+        else
+        {
+          setLogin({...loginInput, error_list: res.data.validation_errors })
+        }
+      });
+
+      });
+    }
   
+
 
     return (
       <Container>
@@ -98,39 +150,47 @@ function Login() {
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
+          
         }}
       >
         <Fade in={open}>
-          <Box sx={style}>
+          <Box sx={style} >
           <div>
-            <Button sx={{marginTop: "-3.5rem", marginLeft: "19.5rem"}}  onClick={handleClose}>
+            <Button sx={{marginTop: "-3.5rem", marginLeft: "17rem"}}  onClick={handleClose}>
             ❌
         </Button>
             </div>
             <Typography id="transition-modal-title" variant="h6" component="h2">
               LOGIN PAGE
             </Typography>
-            <form className={classes.root} onSubmit={handleSubmit}>
+            <form className={classes.root} onSubmit={loginSubmit}>
       
       <TextField
-        label="Email"
+        label="Phone Number"
         size='small'
         maxlength="NaN"
         autoComplete='off'
         variant="outlined"
-        type="email"
+        type="phone_number"
+        name="phone_number"
         required
-        value={email}
-        onChange={e => setEmail(e.target.value)}
+        value={loginInput.phone_number}
+        onChange={handleInput}
+        helperText={loginInput.error_list.phone_number}
+
       />
       <TextField
         label="Password"
         size="small"
         variant="outlined"
         type="password"
+        name="password"
+
         required
-        value={password}
-        onChange={e => setPassword(e.target.value)}
+        value={loginInput.password}
+        onChange={handleInput}
+        helperText={loginInput.error_list.password}
+
       />
       <div>
         

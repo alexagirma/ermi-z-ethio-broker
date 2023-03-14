@@ -1,6 +1,6 @@
 import { Add, Remove } from "@material-ui/icons"
 import styled from "styled-components"
-import Navbar from "../../layouts/frontend/Navbar"
+import Navbar from "../../layouts/frontend/navbar/Navbar"
 
 
 

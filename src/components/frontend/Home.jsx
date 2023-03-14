@@ -1,14 +1,17 @@
 import React from 'react';
-import Test from '../../layouts/frontend/Test';
+import Test from '../../layouts/frontend/product/Test';
 
 import Announcement from "../../layouts/frontend/Announcement"
-import Navbar from "../../layouts/frontend/Navbar"
-import Slider from "../../layouts/frontend/Slider"
-import Products from "../../layouts/frontend/Products";
-import Sidebar from '../../layouts/frontend/Sidebar';
-import Footer from '../../layouts/frontend/Footer';
+import Navbar from "../../layouts/frontend/navbar/Navbar"
+import Slider from "../../layouts/frontend/slider/Slider"
+//import Products from "../../layouts/frontend/Products";
+import Sidebar from '../../layouts/frontend/sidebar/Sidebar';
+import Footer from '../../layouts/frontend/footer/Footer';
 import Intro from '../../layouts/frontend/Intro/Intro';
+//import Home from '../../layouts/frontend/pages/Home/index/';
+
 import styled from 'styled-components';
+//import AppHeader from '../../layouts/frontend/AppHeader/AppHeader';
 
 
 
@@ -29,6 +32,7 @@ const wrap = styled.div`
 function Home() {
     return (
       <>
+
         <Navbar/>
         
       
@@ -36,10 +40,11 @@ function Home() {
       
 
         <Container>
-          <Sidebar/>
-          <Test />
+        <Sidebar/>
+         <Test/>
         </Container>
        <Footer/>
+     
         
         </>
        
