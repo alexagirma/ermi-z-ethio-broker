@@ -146,34 +146,27 @@ const handleChange = (e) => {
     setRegister({...registerInput, [e.target.name]: e.target.value});
   }  
 
+
   const registerSubmit = (e) => {
     e.preventDefault();
-    const data = {
-      first_name: registerInput.first_name,
-      last_name: registerInput.last_name,
-      phone_number: registerInput.phone_number,
-      email: registerInput.email,
-      password: registerInput.password,
-      password_confirmation: registerInput.password_confirmation,
-    }
-     axios.get('/sanctum/csrf-cookie').then(response => {
-      axios.post(`api/v1/customer/register`, data).then(res =>{
-        if(res.data.status === 200)
-        {
-
-          localStorage.setItem('auth_token', res.data.token);
-          localStorage.setItem('auth_first_name', res.data.first_name);
-          localStorage.setItem('auth_last_name', res.data.last_name);
+    try
+   {
+    axios.get('/sanctum/csrf-cookie').then(response => {
+      axios.post(`api/v1/customer/register`, registerInput).then(res =>{
+        
+        if(res.status === 200){
+          
+        navigate('/');
+        console.log(res.data.message);
         swal("Success", res.data.message, "success");
-          navigate('/profile');
-
-        }
-        else
-        {
-         setRegister({...registerInput, error_list: res.data.validation_errors});
-        }
+      }
+        
       });
     });
+
+   }catch(error){
+    console.log(error.response.data)
+   }
   }
    
 

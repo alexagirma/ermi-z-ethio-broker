@@ -231,16 +231,17 @@ function Navbar() {
 
   const logoutSubmit = (e) => {
     e.preventDefault();
-
+    console.log(localStorage.getItem('auth_token'));
     axios.get(`api/customer/logout`).then(res => {
-      if(res.data.status === 200)
+     
+      /* if(res.status === 200)
       {
         localStorage.removeItem('auth_token');
           localStorage.removeItem('auth_first_name');
           localStorage.removeItem('auth_last_name',);
           swal("Success", res.data.message, "success");
           navigate('/');
-      }
+      } */
 
     })
   }

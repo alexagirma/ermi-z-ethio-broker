@@ -107,22 +107,23 @@ function Login() {
       e.preventDefault();
 
       const data = {
+        token: true,
         email: loginInput.email,
         password: loginInput.password,
       }
       axios.get('/sanctum/csrf-cookie').then(response => {
       axios.post(`api/customer/login`, data).then(res =>{
-        if(res.data.status === 200)
-        {
-
+        console.log(res.data.data.id);
+        if(res.status === 200){
           localStorage.setItem('auth_token', res.data.token);
-          localStorage.setItem('auth_first_name', res.data.first_name);
-          localStorage.setItem('auth_last_name', res.data.last_name);
+          localStorage.setItem('auth_first_name', res.data.data.first_name);
+          localStorage.setItem('auth_last_name', res.data.data.last_name);
         swal("Success", res.data.message, "success");
           navigate('/profile');
-
+          // console.log(res.status);
+          // console.log(res.data.token);
         }
-        else if(res.data.status === 401)
+        else if(res.status === 401)
         {
           swal("warning", res.data.message, "warning");
         }
@@ -130,6 +131,25 @@ function Login() {
         {
           setLogin({...loginInput, error_list: res.data.validation_errors })
         }
+        
+        // if(res.status === 200)
+        // {
+
+        //   localStorage.setItem('auth_token', res.data.token);
+        //   localStorage.setItem('auth_first_name', res.data.first_name);
+        //   localStorage.setItem('auth_last_name', res.data.last_name);
+        // swal("Success", res.message, "success");
+        //   navigate('/profile');
+
+        // }
+        // else if(res.data.status === 401)
+        // {
+        //   swal("warning", res.data.message, "warning");
+        // }
+        // else
+        // {
+        //   setLogin({...loginInput, error_list: res.data.validation_errors })
+        // }
       });
 
       });

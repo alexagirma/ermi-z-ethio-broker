@@ -88,13 +88,14 @@ axios.interceptors.request.use(function (config){
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/productdetail" element={<ProductList/>}></Route>
           <Route path="/product" element={<Product/>}></Route>
-         {/* <Route path="/profile" element={<Profile/>}></Route>*/}
+{/*<Route path="/profile" element={<Profile/>}></Route>*/}
 <Route path="/pro" element={<ProfilePage/>}></Route>
           <Route path="/nav" element={<Navbar/>}></Route>
           <Route path="/prod" element={<ProductForm/>}></Route>
 
 
 
+         
 
 
 
@@ -103,7 +104,6 @@ axios.interceptors.request.use(function (config){
      
           
       <Profile/>
-
    
     </Container>
   
