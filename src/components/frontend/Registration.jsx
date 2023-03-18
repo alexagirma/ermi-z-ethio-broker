@@ -132,12 +132,12 @@ const handleChange = (e) => {
   const handleClose = () => setOpen(false);
 
   const[registerInput, setRegister] = useState({
-    firstname: '',
-    lastname: '',
+    first_name: '',
+    last_name: '',
     phone_number: '',
     email: '',
     password: '',
-    confirm_password: '',
+    password_confirmation: '',
     error_list: [],
   });
 
@@ -149,12 +149,12 @@ const handleChange = (e) => {
   const registerSubmit = (e) => {
     e.preventDefault();
     const data = {
-      firstname: registerInput.firstname,
-      lastname: registerInput.lastname,
+      first_name: registerInput.first_name,
+      last_name: registerInput.last_name,
       phone_number: registerInput.phone_number,
       email: registerInput.email,
       password: registerInput.password,
-      confirm_password: registerInput.confirm_password,
+      password_confirmation: registerInput.password_confirmation,
     }
      axios.get('/sanctum/csrf-cookie').then(response => {
       axios.post(`api/v1/customer/register`, data).then(res =>{
@@ -162,10 +162,10 @@ const handleChange = (e) => {
         {
 
           localStorage.setItem('auth_token', res.data.token);
-          localStorage.setItem('auth_firstname', res.data.firstname);
-          localStorage.setItem('auth_lastname', res.data.lastname);
-          swal("Success", res.data.message, "success");
-          navigate('/');
+          localStorage.setItem('auth_first_name', res.data.first_name);
+          localStorage.setItem('auth_last_name', res.data.last_name);
+        swal("Success", res.data.message, "success");
+          navigate('/profile');
 
         }
         else
@@ -207,11 +207,11 @@ const handleChange = (e) => {
         label="First Name"
         variant="outlined"
         size="small"
-        name="firstname"
+        name="first_name"
         //required
-        value={registerInput.firstname}
+        value={registerInput.first_name}
         onChange={handleInput}
-        helperText={registerInput.error_list.firstname}
+        //helperText={registerInput.error_list.first_name}
 
         /*value={firstName}*/
           
@@ -221,11 +221,11 @@ const handleChange = (e) => {
         label="Last Name"
         variant="outlined"
         size="small"
-        name="lastname"
+        name="last_name"
         //required
-        value={registerInput.lastname}
+        value={registerInput.last_name}
         onChange={handleInput}
-        helperText={registerInput.error_list.lastname}
+        //helperText={registerInput.error_list.last_name}
        /* value={lastName}
         onChange={e => setLastName(e.target.value)}*/
       />
@@ -237,7 +237,7 @@ const handleChange = (e) => {
         type="phone_number"
         value={registerInput.phone_number}
         onChange={handleInput}
-        helperText={registerInput.error_list.phone_number}
+        //helperText={registerInput.error_list.phone_number}
         //required
         /*value={phoneNumber}
         onChange={e => setPhoneNumber(e.target.value)}*/
@@ -251,7 +251,7 @@ const handleChange = (e) => {
         type="email"
         value={registerInput.email}
         onChange={handleInput}
-        helperText={registerInput.error_list.email}
+        //helperText={registerInput.error_list.email}
         /*value={email}
         onChange={e => setEmail(e.target.value)}*/
       />
@@ -265,7 +265,7 @@ const handleChange = (e) => {
         //required
         value={registerInput.password}
         onChange={handleInput}
-        helperText={registerInput.error_list.password}
+        //helperText={registerInput.error_list.password}
         /*value={password}
         onChange={e => setPassword(e.target.value)}*/
       />
@@ -273,12 +273,12 @@ const handleChange = (e) => {
         label="Confirm Password"
         variant="outlined"
         size="small"
-        type="confirm_password"
-        name="confirm_password"
+        type="password_confirmation"
+        name="password_confirmation"
         //required
-        value={registerInput.confirm_password}
+        value={registerInput.password_confirmation}
         onChange={handleInput}
-        helperText={registerInput.error_list.confirm_password}
+        //helperText={registerInput.error_list.password_confirmation}
         /*value={confirmPassword}
         onChange={e => setConfirmPassword(e.target.value)}*/
       />

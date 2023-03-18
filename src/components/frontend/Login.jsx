@@ -92,7 +92,7 @@ function Login() {
       handleClose();
     };*/}
     const [loginInput, setLogin] = useState({
-      phone_number: '',
+      email: '',
       password: '',
       error_list: [],
     });
@@ -107,7 +107,7 @@ function Login() {
       e.preventDefault();
 
       const data = {
-        phone_number: loginInput.phone_number,
+        email: loginInput.email,
         password: loginInput.password,
       }
       axios.get('/sanctum/csrf-cookie').then(response => {
@@ -116,10 +116,10 @@ function Login() {
         {
 
           localStorage.setItem('auth_token', res.data.token);
-          localStorage.setItem('auth_firstname', res.data.firstname);
-          localStorage.setItem('auth_lastname', res.data.lastname);
-          swal("Success", res.data.message, "success");
-          navigate('/');
+          localStorage.setItem('auth_first_name', res.data.first_name);
+          localStorage.setItem('auth_last_name', res.data.last_name);
+        swal("Success", res.data.message, "success");
+          navigate('/profile');
 
         }
         else if(res.data.status === 401)
@@ -166,17 +166,17 @@ function Login() {
             <form className={classes.root} onSubmit={loginSubmit}>
       
       <TextField
-        label="Phone Number"
+        label="Email"
         size='small'
         maxlength="NaN"
         autoComplete='off'
         variant="outlined"
-        type="phone_number"
-        name="phone_number"
+        type="email"
+        name="email"
         required
-        value={loginInput.phone_number}
+        value={loginInput.email}
         onChange={handleInput}
-        helperText={loginInput.error_list.phone_number}
+        //helperText={loginInput.error_list.email}
 
       />
       <TextField

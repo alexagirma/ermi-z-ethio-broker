@@ -232,12 +232,12 @@ function Navbar() {
   const logoutSubmit = (e) => {
     e.preventDefault();
 
-    axios.post(`/api/logout`).then(res => {
+    axios.get(`api/customer/logout`).then(res => {
       if(res.data.status === 200)
       {
         localStorage.removeItem('auth_token');
-          localStorage.removeItem('auth_firstname');
-          localStorage.removeItem('auth_lastname',);
+          localStorage.removeItem('auth_first_name');
+          localStorage.removeItem('auth_last_name',);
           swal("Success", res.data.message, "success");
           navigate('/');
       }

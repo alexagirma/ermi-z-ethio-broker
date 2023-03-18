@@ -13,7 +13,7 @@ import ProfilePage from "./components/frontend/profile/ProfilePage";
 
 
 import ProductList from "./components/frontend/ProductList";
-import Product from "./components/frontend/Product";
+import Product from "./components/frontend/productdetails/Product";
 import styled from 'styled-components'
 import { ColorModeContext, useMode } from "./Theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
@@ -32,6 +32,7 @@ import Geography from "./layouts/admin/Geography";
 import Topbar from "./layouts/admin/Topbar";
 import Sidebar from "./layouts/admin/Sidebar";
 import axios from 'axios';
+import ProductForm from "./components/frontend/ProductForm";
 
 axios.defaults.baseURL = "http://localhost:8000/";
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -87,9 +88,10 @@ axios.interceptors.request.use(function (config){
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/productdetail" element={<ProductList/>}></Route>
           <Route path="/product" element={<Product/>}></Route>
-          <Route path="/profile" element={<Profile/>}></Route>
+         {/* <Route path="/profile" element={<Profile/>}></Route>*/}
 <Route path="/pro" element={<ProfilePage/>}></Route>
           <Route path="/nav" element={<Navbar/>}></Route>
+          <Route path="/prod" element={<ProductForm/>}></Route>
 
 
 
@@ -100,7 +102,8 @@ axios.interceptors.request.use(function (config){
       </Router>
      
           
-          
+      <Profile/>
+
    
     </Container>
   
