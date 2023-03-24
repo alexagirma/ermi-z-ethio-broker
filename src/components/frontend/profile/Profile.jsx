@@ -33,6 +33,7 @@ import Messages from '../../../layouts/frontend/Profile/Messages';
 import Settings from '../../../layouts/frontend/Profile/Settings';
 import UserProfile from '../../../layouts/frontend/Profile/UserProfile';
 import Sidebar from '../../../layouts/frontend/Profile/Sidebar';
+import PostProductForm from '../../frontend/postproduct/PostProductForm';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import '../../../App.css';
  
@@ -67,7 +68,7 @@ export default function RecipeReviewCard() {
   return (
     <>
     <Navbar/>
-    <div sx={{display: 'flex', justifyContent: 'space-between', flexDirection: "column" }}>
+    <div sx={{display: 'flex', justifyContent: 'space-between', flexDirection: "row" }}>
     {/*<Card sx={{ maxWidth: 280, marginTop: '40px', marginLeft: '100px',  }}>
       <CardHeader
         avatar={
@@ -111,7 +112,7 @@ export default function RecipeReviewCard() {
         <Routes>
           
           <Route path="/profile" element={<UserProfile/>}></Route> 
-          <Route path="/addpost" element={<ProductForm/>}></Route>
+          <Route path="/addpost" element={<PostProductForm/>}></Route>
           <Route path="/newsfeed" element={<Newsfeed/>}></Route>
           <Route path="/messages" element={<Messages/>}></Route>
           <Route path="/settings" element={<Settings/>}></Route> 

@@ -113,11 +113,11 @@ function Login() {
       }
       axios.get('/sanctum/csrf-cookie').then(response => {
       axios.post(`api/customer/login`, data).then(res =>{
-        console.log(res.data.data.id);
+        //console.log(res.data.data.id);
         if(res.status === 200){
-          localStorage.setItem('auth_token', res.data.token);
-          localStorage.setItem('auth_first_name', res.data.data.first_name);
-          localStorage.setItem('auth_last_name', res.data.data.last_name);
+          //localStorage.setItem('auth_token', res.data.token);
+          //localStorage.setItem('auth_first_name', res.data.data.first_name);
+          //localStorage.setItem('auth_last_name', res.data.data.last_name);
         swal("Success", res.data.message, "success");
           navigate('/profile');
           // console.log(res.status);

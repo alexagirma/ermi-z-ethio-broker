@@ -1,6 +1,7 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { popularProducts } from "../../../data/data";
 import "./Property.css";
+import axios from 'axios';
 
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
@@ -12,7 +13,7 @@ import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
-
+import { Link } from 'react-router-dom';
 const labels = {
     0.5: 'Useless',
     1: 'Useless+',
@@ -32,12 +33,27 @@ const labels = {
 
 
 function Test()     {
-    const [details, setDetails] = useState(popularProducts)
+   const [details, setDetails] = useState(popularProducts)
 
     const [value, setValue] = React.useState(0);
 
     const [values, setValues] = React.useState(2);
   const [hover, setHover] = React.useState(-1);
+
+  //const [products, setProducts] = useState([]);
+
+  /*useEffect(() => {
+    axios
+      .get(`api/products`)
+      .then(response => {
+        setProducts(response.data.data);
+        console.log("data");
+
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, []);*/
 
     return(
     <Fragment>
@@ -51,6 +67,8 @@ function Test()     {
     details.map((detail)=>{
         return(
 
+          <div key={detail.id}>
+
 <div className="column">
                     <div className="single-property">
                      <div className="card">
@@ -58,7 +76,10 @@ function Test()     {
                          
                         <div className="property-thumb">
                              <div className="property-tag"> For Sale </div>
-                             <img src={detail.img} alt="Palace"/>
+                             <Link to='/product'>
+                              <img src={detail.img} alt="Palace"/>
+                             </Link>
+                             
                         </div>
 
 
@@ -77,11 +98,11 @@ function Test()     {
     </Box>
 
                         <div className="property-content">
-                            <h3>{detail.heading}</h3>
+                            <h3>{details.heading}</h3>
                             <i class="fa-solid fa-location-dot"></i>
-                            <span>{detail.span}</span>
+                            <span>{details.span}</span>
                             </div>
-                            <span className="amount">{detail.amount}</span>
+                            <span className="amount">{details.amount}</span>
                      </div> 
                      <div className="property-footer">
                         <ul>
@@ -129,6 +150,7 @@ function Test()     {
                 </div>
 
             </div> 
+            </div>
 
         )
     })

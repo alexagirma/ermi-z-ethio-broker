@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
-//import MasterLayout from "./layouts/admin/MasterLayout";
-import Dashboard from "./layouts/admin/Dashboard";
+
 //import Profile from "./layouts/admin/Profile";
 import Home from "./components/frontend/Home";
 import Registration from "./components/frontend/Registration";
@@ -15,22 +14,9 @@ import ProfilePage from "./components/frontend/profile/ProfilePage";
 import ProductList from "./components/frontend/ProductList";
 import Product from "./components/frontend/productdetails/Product";
 import styled from 'styled-components'
-import { ColorModeContext, useMode } from "./Theme";
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import Team from "./layouts/admin/Team";
-import Contact from "./layouts/admin/Contact";
-import Invoice from "./layouts/admin/Invoice";
-import Form from "./layouts/admin/Form";
-import Bar from "./layouts/admin/Bar";
-import Pie from "./layouts/admin/Pie";
 
 import Navbar from "./layouts/frontend/nav/Navbar";
-import Line from "./layouts/admin/Line";
-import Faq from "./layouts/admin/Faq";
-import Calendar from "./layouts/admin/Calendar";
-import Geography from "./layouts/admin/Geography";
-import Topbar from "./layouts/admin/Topbar";
-import Sidebar from "./layouts/admin/Sidebar";
+
 import axios from 'axios';
 import ProductForm from "./components/frontend/ProductForm";
 
@@ -66,18 +52,7 @@ axios.interceptors.request.use(function (config){
       <Router>
         <Routes>
          
-          <Route path="/admin" element={<Dashboard />} />
-              <Route path="/admin/team" element={<Team />} />
-              <Route path="/admin/contacts" element={<Contact />} />
-              <Route path="/admin/invoices" element={<Invoice />} />
-              <Route path="/admin/form" element={<Form />} />
-              <Route path="/admin/bar" element={<Bar />} />
-              <Route path="/admin/pie" element={<Pie />} />
-              <Route path="/admin/line" element={<Line />} />
-              <Route path="/admin/faq" element={<Faq />} />
-              <Route path="admin/calendar" element={<Calendar />} />
-              <Route path="admin/geography" element={<Geography />} />
-
+        
 
 
          { /*<Route path="/admin" element={<MasterLayout />}></Route>
