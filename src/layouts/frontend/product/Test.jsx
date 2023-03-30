@@ -33,41 +33,43 @@ const labels = {
 
 
 function Test()     {
-   const [details, setDetails] = useState(popularProducts)
+   //const [details, setDetails] = useState(popularProducts)
 
     const [value, setValue] = React.useState(0);
 
     const [values, setValues] = React.useState(2);
   const [hover, setHover] = React.useState(-1);
 
-  //const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(null);
 
-  /*useEffect(() => {
+  useEffect(() => {
     axios
-      .get(`api/products`)
+      .get(`api/v1/products?limit=2&page=1`)
       .then(response => {
         setProducts(response.data.data);
         console.log("data");
+        console.log(products);
 
       })
       .catch(error => {
         console.log(error);
       });
-  }, []);*/
+  }, []);
 
     return(
     <Fragment>
         <section className="property">
-          {/*  <div className="center">
+            <div className="center">
                 <h3>Product</h3>
-    </div>*/}
+    </div>
             <div className="row">
+              
 
 {
-    details.map((detail)=>{
+     products.map((product)=>{
         return(
 
-          <div key={detail.id}>
+          <div key={product.id}>
 
 <div className="column">
                     <div className="single-property">
@@ -77,7 +79,7 @@ function Test()     {
                         <div className="property-thumb">
                              <div className="property-tag"> For Sale </div>
                              <Link to='/product'>
-                              <img src={detail.img} alt="Palace"/>
+                              <img src={product.img} alt="Palace"/>
                              </Link>
                              
                         </div>
@@ -98,24 +100,24 @@ function Test()     {
     </Box>
 
                         <div className="property-content">
-                            <h3>{details.heading}</h3>
+                            <h3>{product.heading}</h3>
                             <i class="fa-solid fa-location-dot"></i>
-                            <span>{details.span}</span>
+                            <span>{product.span}</span>
                             </div>
-                            <span className="amount">{details.amount}</span>
+                            <span className="amount">{product.amount}</span>
                      </div> 
                      <div className="property-footer">
                         <ul>
                             <li>
-                                <span>{detail.size}</span>
+                                <span>{product.size}</span>
                             </li>
                             <li>
-                                <img src={`${detail.bedImage}`} alt="bed" />
-                                <span>{detail.bed}</span>
+                                <img src={`${product.bedImage}`} alt="bed" />
+                                <span>{product.bed}</span>
                             </li>
                             <li>
-                                <img src={detail.bathImage} alt="bath" />
-                                <span>{detail.bath}</span>
+                                <img src={product.bathImage} alt="bath" />
+                                <span>{product.bath}</span>
                             </li>
                         </ul>
 
@@ -153,7 +155,7 @@ function Test()     {
             </div>
 
         )
-    })
+    }) 
 }
 <Stack spacing={2}>
       

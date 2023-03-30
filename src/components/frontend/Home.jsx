@@ -11,6 +11,8 @@ import Intro from '../../layouts/frontend/Intro/Intro';
 //import Home from '../../layouts/frontend/pages/Home/index/';
 
 import styled from 'styled-components';
+import Product from './productdetails/Product';
+import Products from '../../layouts/frontend/product/Products';
 //import AppHeader from '../../layouts/frontend/AppHeader/AppHeader';
 
 
@@ -41,7 +43,7 @@ function Home() {
 
         <Container>
         <Sidebar/>
-         <Test/>
+         <Products/>
         </Container>
        <Footer/>
      
