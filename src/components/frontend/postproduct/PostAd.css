@@ -1,9 +1,0 @@
-.delete {
-    color: red;
-    margin-left: 10px;
-    display: none;
-}
-
-.hoverImage:hover .delete {
-    display: block;
-}

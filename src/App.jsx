@@ -1,25 +1,27 @@
 import React from "react";
-import { useState } from "react";
-
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
-
-//import Profile from "./layouts/admin/Profile";
-import Home from "./components/frontend/Home";
-import Registration from "./components/frontend/Registration";
-import Login from "./components/frontend/Login";
-import Profile from "./components/frontend/profile/Profile";
-//import ProfilePage from "./components/frontend/profile/ProfilePage";
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 
-import ProductList from "./components/frontend/ProductList";
-import Product from "./components/frontend/productdetails/Product";
+
+import Home from "./Pages/Home";
+import Registration from "./Pages/Registration";
+import Login from "./Pages/Login";
+import Profile from "./Pages/profile/Profile";
+import Product from "./Pages/productdetails/Product";
 import styled from 'styled-components'
-
-import Navbar from "./layouts/frontend/nav/Navbar";
-
 import axios from 'axios';
-import ProductForm from "./components/frontend/ProductForm";
-import Filter from "./layouts/frontend/filter/Home/Home";
+import Aboutus from "./Pages/AboutUs";
+
+//Layout
+import RootLayout from "./Layout/RootLayout";
+import UserProfile from "./Components/Profile/UserProfile";
+import Newsfeed from "./Components/Profile/Newsfeed";
+import Messages from "./Components/Profile/Messages";
+import Settings from "./Components/Profile/Settings";
+import PostAd from "./Components/Profile/postproduct/ProductForm";
+import Filters from "./Components/filter/Home/Home";
+
+
 
 axios.defaults.baseURL = "http://localhost:8000/";
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -31,9 +33,6 @@ axios.interceptors.request.use(function (config){
   config.headers.Authorization = token ? `Bearer ${token}` : '';
   return config;
 });
-
-
-
 
   
    const Container = styled.div`
@@ -49,27 +48,37 @@ axios.interceptors.request.use(function (config){
  
              
     <Container>
-   
       <Router>
-        <Routes>
-         
-        
+   
+  <Routes>
+  <Route path="/" element={<RootLayout />}>
+      <Route index element={<Home />} />
+      <Route path="register" element={<Registration/>} />
+          <Route path="login" element={<Login/>} />
+          <Route path="product" element={<Product/>} />
+          <Route path="aboutus" element={<Aboutus/>} />
+          <Route path="filter" element={<Filters/>} />
+          </Route>
+          <Route path="/profile" element={<Profile/>}>
+          <Route index element={<UserProfile />} />
+          <Route path="addpost" element={<PostAd/>} />
+          <Route path="newsfeed" element={<Newsfeed/>} />
+          <Route path="messages" element={<Messages/>} />
+          <Route path="settings" element={<Settings/>} />
 
+    </Route>
+  </Routes>
+        
+   {/* <RouterProvider router={router} /> */}
 
          { /*<Route path="/admin" element={<MasterLayout />}></Route>
           <Route path="/admin/dashboard" element={<Dashboard />}></Route>
-          <Route path="/admin/profile" element={<Profile />}></Route>*/}
-           <Route path="/" element={<Home />}></Route>
-          <Route path="/register" element={<Registration/>}></Route>
-          <Route path="/login" element={<Login/>}></Route>
-          <Route path="/productdetail" element={<ProductList/>}></Route>
-          <Route path="/product" element={<Product/>}></Route>
+          <Route path="/admin/profile" element={<Profile />}></Route>
+           <Route path="/" element={<Home />}></Route>*/}
+   
 {/*<Route path="/profile" element={<Profile/>}></Route>*/}
 {/*<Route path="/pro" element={<ProfilePage/>}></Route>
-*/}          <Route path="/nav" element={<Navbar/>}></Route>
-          <Route path="/prod" element={<ProductForm/>}></Route>
-
-          <Route path="/filter" element={<Filter/>}></Route>
+*/}       
           
           
 
@@ -79,11 +88,9 @@ axios.interceptors.request.use(function (config){
 
 
 
-        </Routes>
-      </Router>
      
-          
-      <Profile/>
+          </Router>
+  
    
     </Container>
   
