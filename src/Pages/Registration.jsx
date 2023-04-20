@@ -149,31 +149,41 @@ const handleChange = (e) => {
 
   const registerSubmit = (e) => {
     e.preventDefault();
-    try
-   {
+       
+    const data = {
+      first_name: registerInput.first_name,
+      last_name: registerInput.last_name,
+      phone_number: registerInput.phone_number,
+      email: registerInput.email,
+      password: registerInput.password,
+  }
+   
     axios.get('/sanctum/csrf-cookie').then(response => {
-      axios.post(`api/v1/customer/register`, registerInput).then(res =>{
-        
-        if(res.status === 200){
-          
+      axios.post(`/api/register`, data).then(res => { 
+       if(res.status === 200)
+       {
+        localStorage.setItem('auth_token', res.data.token);
+        localStorage.setItem('auth_first_name', res.data.first_name);
+        localStorage.setItem('auth_last_name', res.data.last_name);
+        swal("Success",res.data.message,"success");
         navigate('/');
         console.log(res.data.message);
-        swal("Success", res.data.message, "success");
       }
-        
+      else
+      {
+          setRegister({...registerInput, error_list: res.data.validation_errors});
+      }
       });
     });
 
-   }catch(error){
-    console.log(error.response.data)
-   }
+  
   }
    
 
     return (
       <Container>
       
-      <Button onClick={handleOpen}>Sign UP</Button>
+      <Button onClick={handleOpen}sx={{ marginLeft: "auto" }} variant="contained">Sign UP</Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

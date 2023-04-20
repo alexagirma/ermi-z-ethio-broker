@@ -68,8 +68,9 @@ axios.interceptors.request.use(function (config){
 
     </Route>
   </Routes>
+  </Router>
         
-   {/* <RouterProvider router={router} /> */}
+ 
 
          { /*<Route path="/admin" element={<MasterLayout />}></Route>
           <Route path="/admin/dashboard" element={<Dashboard />}></Route>
@@ -89,7 +90,7 @@ axios.interceptors.request.use(function (config){
 
 
      
-          </Router>
+      
   
    
     </Container>

@@ -7,18 +7,25 @@ import { ProSidebar, Menu, MenuItem, SubMenu, SidebarHeader, SidebarContent, Sid
 import "react-pro-sidebar/dist/css/styles.css";
 import { Link } from 'react-router-dom';
 
-{/*const Container = styled.div`
+
+
+
+
+
+const Container = styled.div`
     margin-top: 12px;
     margin-left: 4em;
     flex: 30%;
    //height: calc(100vh - 50px);
     backgroundColor={colors.primary[400]}
     height: 100vh
+    background-color: pink;
+
 
 
 `;
 
-const Wrapper = styled.div`
+/*const Wrapper = styled.div`
 padding: 10px;
 background-color: white;
 padding-right: 50px;
@@ -42,7 +49,7 @@ li {
 const Icon = styled.div`
 margin-right: 15px;
 `;
-*/}
+*/
 
 
 
@@ -51,9 +58,9 @@ function Sidebar(){
     
     return(
           
-
+<Container>
             <div style={{height: "200vh", marginTop: "12px", marginLeft: "4em", flex: "30%", boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", backgroundColor: "#f6f6f8"}}>
-            <ProSidebar sx={{backgroundColor: "#f6f6f8", boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",}}>
+            <ProSidebar sx={{backgroundColor: "rgb(0,249,249.0.7)", boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",}}>
                 <SidebarHeader>
                     <h2>Category</h2>
                 </SidebarHeader>
@@ -118,6 +125,7 @@ function Sidebar(){
     </SidebarContent> 
     </ProSidebar>
     </div>
+    </Container>
               
               )
             }

@@ -92,7 +92,7 @@ function Login() {
       handleClose();
     };*/}
     const [loginInput, setLogin] = useState({
-      email: '',
+      phone_number: '',
       password: '',
       error_list: [],
     });
@@ -108,24 +108,27 @@ function Login() {
 
       const data = {
         token: true,
-        email: loginInput.email,
+        phone_number: loginInput.phone_number,
         password: loginInput.password,
       }
       axios.get('/sanctum/csrf-cookie').then(response => {
-      axios.post(`api/customer/login`, data).then(res =>{
+      axios.post(`api/login`, data).then(res =>{
         //console.log(res.data.data.id);
-        if(res.status === 200){
-          //localStorage.setItem('auth_token', res.data.token);
-          //localStorage.setItem('auth_first_name', res.data.data.first_name);
-          //localStorage.setItem('auth_last_name', res.data.data.last_name);
-        swal("Success", res.data.message, "success");
+        if(res.data.status === 200)
+        {
+          localStorage.setItem('auth_token', res.data.token);
+          localStorage.setItem('auth_first_name', res.data.first_name);
+          localStorage.setItem('auth_last_name', res.data.last_name);
+          swal("Success",res.data.message,"success");
           navigate('/profile');
           // console.log(res.status);
           // console.log(res.data.token);
         }
-        else if(res.status === 401)
+        else if(res.data.status === 401)
         {
           swal("warning", res.data.message, "warning");
+          
+
         }
         else
         {
@@ -160,7 +163,7 @@ function Login() {
     return (
       <Container>
       
-      <Button onClick={handleOpen}>Login</Button>
+      <Button onClick={handleOpen} sx={{ marginLeft: "auto" }} variant="contained">Login</Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -186,15 +189,15 @@ function Login() {
             <form className={classes.root} onSubmit={loginSubmit}>
       
       <TextField
-        label="Email"
+        label="Phone Number"
         size='small'
         maxlength="NaN"
         autoComplete='off'
         variant="outlined"
-        type="email"
-        name="email"
+        type="phone_number"
+        name="phone_number"
         required
-        value={loginInput.email}
+        value={loginInput.phone_number}
         onChange={handleInput}
         //helperText={loginInput.error_list.email}
 
